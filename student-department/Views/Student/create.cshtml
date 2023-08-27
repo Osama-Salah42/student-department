@@ -1,0 +1,39 @@
+﻿@model Student
+@{
+    //Layout = null;
+}
+
+
+    <form method="post">
+        @*<div asp-validation-summary="All"></div>*@
+        <label>Student name : </label> <input asp-for="Name" />
+        <span asp-validation-for="Name"></span><br />
+        <label>Student age : </label>
+        <input asp-for="Age" />
+        <span asp-validation-for="Age"></span>
+        <br />
+        <label>Student Email : </label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+        <br />
+        <label>Student Password : </label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+        <br />
+        <label>Confirm Password : </label>
+        <input asp-for="CPassword" />
+        <span asp-validation-for="CPassword"></span>
+        <br />
+        <select name="DeptId" id="DeptId" asp-for="DeptId" asp-items="ViewBag.Dept">
+
+        </select>
+        <br/>
+
+        <input type="submit" value="Add" class="btn btn-danger" />
+    </form>
+@section scripts{
+    <script src="/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+    }
+
